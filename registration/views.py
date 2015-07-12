@@ -41,7 +41,7 @@ def registration_form(request):
         print("sending email ...")
         message='Please click on the link to activate the account \n'+'127.0.0.1:8000/'+'email_confirmation/'+decoded
         from_email=settings.EMAIL_HOST_USER
-        to_list=[email,'tanvisurana2012@gmail.com']
+        to_list=[email]
         send_mail(subject,message,settings.EMAIL_HOST_USER,to_list,fail_silently=True)
         user.save()          
         return render(request, "registration/success.html")
